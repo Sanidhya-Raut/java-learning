@@ -1,0 +1,23 @@
+Q1 - Why did you use ArrayList?
+
+I chose ArrayList because my application performs more read operations than insert/delete operations.
+ArrayList provides O(1) random access using indexes because it is backed by a dynamic array.
+Since the number of books isn't expected to change frequently, ArrayList is a good fit.
+
+Q2 - Time Complexity
+    add()
+    get(index)
+    remove()
+
+ ans - add()        O(n) worstcase
+       get(index)   O(1)
+       remove()     O(n) worstcase.
+
+Q3. Would you use LinkedList for 5 million books?
+
+It depends on the application's access pattern.
+If I frequently access books by index or search through them,
+I would still prefer ArrayList.
+If I already have references to nodes and perform many insertions and deletions in the middle,
+LinkedList could be beneficial. However, for most real-world Java applications,
+ArrayList is usually the preferred choice because of better cache locality and faster iteration.

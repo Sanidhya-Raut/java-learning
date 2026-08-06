@@ -1,0 +1,21 @@
+Interview Questions
+
+You should be able to answer:
+
+What is Stream API?
+Difference between Collection and Stream?
+Difference between map() and filter()?
+Difference between forEach() and map()?
+What are intermediate operations?
+What are terminal operations?
+Are Streams reusable?
+Can Streams modify the original collection?
+
+Difference between map and flatMap?
+map: (1-to-1 transformation): Converts each element into one other element.
+If you map a list of lists, you get a stream of lists.
+
+flatMap: (1-to-many flattening): Converts each element into a stream of elements,
+and then merges all those individual streams into a single consolidated stream
+
+
