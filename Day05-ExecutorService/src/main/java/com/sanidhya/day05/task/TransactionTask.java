@@ -14,6 +14,7 @@ public class TransactionTask implements Callable<String> {
 
     @Override
     public String call() {
+        transaction.display();
         return  transaction.getTransactionStatus();
     }
 }

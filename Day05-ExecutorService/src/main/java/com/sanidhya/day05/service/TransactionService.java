@@ -25,9 +25,11 @@ public class TransactionService {
             for (Future<String> future : futures) {
                 System.out.println(future.get());
             }
-        }catch (InterruptedException | ExecutionException e){
-            System.out.println(e);
-        }finally {
+        }catch (InterruptedException e){
+            Thread.currentThread().interrupt();
+        }catch (ExecutionException e){
+            System.out.println(e); // handling task failing
+        } finally {
             executorService.shutdown();
         }
 
