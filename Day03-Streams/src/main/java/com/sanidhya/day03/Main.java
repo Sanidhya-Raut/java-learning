@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        EmployeeAnalyticService service = new EmployeeAnalyticService();
+        final EmployeeAnalyticService service = new EmployeeAnalyticService();
 
         Random random = new Random();
         service.getEmployeeList().add(new Employee(random.nextInt(), "Ram", "IT", 2000.00, 25));
@@ -23,7 +23,6 @@ public class Main {
         service.getEmployeeList().add(new Employee(random.nextInt(), "Kabir", "HR", 4100.00, 28));
         service.getEmployeeList().add(new Employee(random.nextInt(), "Chloe", "Marketing", 3900.00, 24));
 
-
 //        service.printAllEmployees();
 
 //        service.employeesWithSalaryGreaterThan(4000);
@@ -34,9 +33,6 @@ public class Main {
 //        System.out.println(service.findHighestSalary());
 //        System.out.println(service.findAvgSalary());
         System.out.println(service.groupEmployeesWithDepartment());
-
-
-
     }
 
 }

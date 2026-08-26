@@ -4,6 +4,7 @@ import com.sanidhya.day03.model.Employee;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class EmployeeAnalyticService {
 
@@ -21,7 +22,7 @@ public class EmployeeAnalyticService {
         System.out.println(employeeList);
     }
 
-    public void employeesWithSalaryGreaterThan(int salary){
+    public void employeesWithSalaryGreaterThan(double salary){
         employeeList.stream().filter(s -> s.getSalary() > salary).forEach(System.out::println);
     }
 
@@ -29,8 +30,12 @@ public class EmployeeAnalyticService {
         employeeList.stream().sorted(Comparator.comparing(Employee::getSalary)).forEach(System.out::println);
     }
 
-    public void sortEmployeesByName() {
-        employeeList.stream().sorted(Comparator.comparing(Employee::getName)).forEach(System.out::println);
+    public List<Employee> sortEmployeesByName(boolean isReversed) {
+        Comparator<Employee> comparator = Comparator.comparing(Employee::getName);
+        if(isReversed) {
+            comparator = comparator.reversed();
+        }
+        return employeeList.stream().sorted(comparator).collect(Collectors.toList());
     }
 
     public void printOnlyEmployeeNames() {
