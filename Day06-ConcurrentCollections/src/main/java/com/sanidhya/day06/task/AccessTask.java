@@ -1,16 +1,16 @@
 package com.sanidhya.day06.task;
 
 import com.sanidhya.day06.model.Employee;
-import com.sanidhya.day06.service.EmployeeAccessService;
+import com.sanidhya.day06.service.AccessService;
 
 public class AccessTask implements Runnable{
 
-    private final EmployeeAccessService service;
+    private final AccessService service;
     private final Employee employee;
 
-    public AccessTask(Employee employee,EmployeeAccessService employeeAccessService){
+    public AccessTask(Employee employee,AccessService accessService){
         this.employee = employee;
-        this.service = employeeAccessService;
+        this.service = accessService;
     }
 
     @Override

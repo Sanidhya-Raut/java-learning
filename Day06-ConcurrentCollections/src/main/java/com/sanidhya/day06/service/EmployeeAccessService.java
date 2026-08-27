@@ -3,7 +3,7 @@ package com.sanidhya.day06.service;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class EmployeeAccessService {
+public class EmployeeAccessService implements AccessService {
 
     private final Map<Integer, AtomicInteger> accessCount;
 
